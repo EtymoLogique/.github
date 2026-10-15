@@ -2,7 +2,8 @@
 
 <img src="banner.svg" alt="ÉtymoLogique : comprendre comment les mots voyagent, se transforment et se composent" width="100%">
 
-<a href="https://etymologique.fr" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="btn-jouer-nuit.svg"><img src="btn-jouer.svg" alt="Jouer sur etymologique.fr" height="54"></picture></a>
+<picture><source media="(prefers-color-scheme: dark)" srcset="btn-jouer-nuit.svg"><img src="btn-jouer.svg" alt="Jouer : bientôt disponible" height="54"></picture>
+<a href="https://horsprod.etymologique.fr" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="btn-beta-nuit.svg"><img src="btn-beta.svg" alt="Bêta ouverte sur horsprod.etymologique.fr" height="54"></picture></a>
 <a href="https://ko-fi.com/lunik_tiwabbit" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="btn-kofi-nuit.svg"><img src="btn-kofi.svg" alt="Offrir un café sur Ko-fi" height="54"></picture></a>
 <a href="https://etymologique.github.io/Design/" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="btn-dossier-nuit.svg"><img src="btn-dossier.svg" alt="Dossier de conception" height="54"></picture></a>
 

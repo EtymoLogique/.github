@@ -120,11 +120,12 @@ def banner():
 ICONS = {
     "jouer": '<path d="M5 3v16l13-8z"/>',
     "cafe": '<path d="M2 7h14v6a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5z"/><path d="M16 9h2a3 3 0 0 1 0 6h-2" fill="none" stroke="currentColor" stroke-width="2"/>',
+    "bientot": '<circle cx="11" cy="11" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M11 6v5l3 3" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>',
     "dossier": '<path d="M2 4h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2zM22 4h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/>',
 }
 
 
-def button(name, label, icon, primary):
+def button(name, label, icon, primary, disabled=False):
     w = int(len(label) * 8.8 + 80)
     for suffix, t in THEMES.items():
         fg = FIXED_INK if primary else t["ink"]
@@ -136,6 +137,8 @@ def button(name, label, icon, primary):
         body = (shadow + face
                 + f'<g transform="translate({x0 + 22},14)" fill="{fg}" color="{fg}">{ICONS[icon]}</g>'
                 + f'<text class="sans" x="{x0 + 54}" y="30" font-size="13" font-weight="800" letter-spacing="0.8" fill="{fg}">{label.upper()}</text>')
+        if disabled:  # .btn:disabled : 40 %, sans ombre
+            body = f'<g opacity="0.4">{body}</g>'
         write(f"btn-{name}{suffix}.svg", svg(w + 12, 54, body, label))
 
 
@@ -268,7 +271,8 @@ if __name__ == "__main__":
     for old in OUT.glob("*.svg"):
         old.unlink()
     banner()
-    button("jouer", "Jouer", "jouer", True)
+    button("jouer", "Jouer · bientôt", "bientot", False, disabled=True)  # pas encore en prod
+    button("beta", "Bêta ouverte", "jouer", True)
     button("kofi", "Offrir un café", "cafe", False)
     button("dossier", "Dossier de conception", "dossier", False)
     jeu(); piliers(); respect(); capot(); soutien(); bandeaux()
