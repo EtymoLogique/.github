@@ -45,12 +45,13 @@ def seal(x, y, size):
             f'font-weight="700" letter-spacing="-0.5">ÉL</text></g></g>')
 
 
-def brick(x, y, w, h, color, meta, label, t, size=34, radius=10, shadow=4, cls=""):
+def brick(x, y, w, h, color, meta, label, t, size=34, radius=10, shadow=4, cls="", dot=False):
     """Brique : contour Encre 1,5 px, rayon 10, ombre dure 4 px, texte en Encre fixe."""
     return (f'<g class="{cls}"><rect x="{x + shadow}" y="{y + shadow}" width="{w}" height="{h}" rx="{radius}" fill="{t["shadow"]}"/>'
             f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" fill="{color}" stroke="{FIXED_INK}" stroke-width="1.5"/>'
-            + (f'<text class="mono" x="{x + 16}" y="{y + 24}" font-size="11" letter-spacing="0.66" fill="{FIXED_INK}">{meta}</text>' if meta else "")
-            + f'<text class="serif" x="{x + 16}" y="{y + h - 18}" font-size="{size}" font-weight="700" fill="{FIXED_INK}">{label}</text></g>')
+            + (f'<circle cx="{x + 24}" cy="{y + 21}" r="6" fill="{ACTION}" stroke="{FIXED_INK}" stroke-width="1.5"/>' if dot else "")
+            + (f'<text class="mono" x="{x + (38 if dot else 18)}" y="{y + 25}" font-size="11" letter-spacing="0.66" fill="{FIXED_INK}">{meta}</text>' if meta else "")
+            + f'<text class="serif" x="{x + (18 if meta else 16)}" y="{y + h - 18}" font-size="{size}" font-weight="700" fill="{FIXED_INK}">{label}</text></g>')
 
 
 def panel(h, num, plain, em, t, after=""):
@@ -141,15 +142,14 @@ def button(name, label, icon, primary):
 # ---------- 01 Le jeu : fusion animée ----------
 def jeu():
     for suffix, t in THEMES.items():
+        # Briques à la taille de leur contenu (.brick : rayon 10, ombre dure 4) ; le mot est une brique Crème (.brick[data-kind="mot"]).
+        y, h = 178, 84
         body = (panel(400, "01 · LA TABLE DE FUSION", "Le jeu en ", "trente secondes", t)
-                + brick(36, 170, 232, 104, PREFIX, "PRÉFIXE · GREC ANCIEN", "télé-", t, size=40, cls="b1")
-                + f'<text class="serif" x="290" y="236" font-size="40" fill="{t["ink"]}">+</text>'
-                + brick(326, 170, 232, 104, SUFFIX, "SUFFIXE · GREC ANCIEN", "-scope", t, size=40, cls="b2")
-                + f'<text class="serif" x="582" y="236" font-size="40" fill="{t["ink"]}">=</text>'
-                + '<g class="res">' + card(620, 160, 344, 124, t)
-                + f'<circle cx="650" cy="190" r="8" fill="{ACTION}" stroke="{FIXED_INK}" stroke-width="1.5"/>'
-                + f'<text class="mono" x="668" y="195" font-size="11" font-weight="700" letter-spacing="1.5" fill="{t["accent"]}">DÉCOUVERTE · CODEX</text>'
-                + f'<text class="serif" x="640" y="256" font-size="48" font-weight="600" letter-spacing="-1.9" fill="{t["ink"]}">télescope</text></g>'
+                + brick(146, y, 189, h, PREFIX, "PRÉFIXE · GREC ANCIEN", "télé-", t, cls="b1")
+                + f'<text class="serif" x="365" y="{y + 56}" text-anchor="middle" font-size="40" fill="{t["ink"]}">+</text>'
+                + brick(395, y, 189, h, SUFFIX, "SUFFIXE · GREC ANCIEN", "-scope", t, cls="b2")
+                + f'<text class="serif" x="614" y="{y + 56}" text-anchor="middle" font-size="40" fill="{t["ink"]}">=</text>'
+                + brick(644, y, 210, h, CREAM_FIXED, "DÉCOUVERTE · FRANÇAIS", "télescope", t, cls="res", dot=True)
                 + f'<line x1="36" x2="964" y1="318" y2="318" stroke="{t["line"]}" stroke-width="1.5"/>'
                 + f'<text class="sans" x="36" y="358" font-size="16" fill="{t["ink2"]}">Se tromper ne coûte rien : seule une découverte consomme un exemplaire de chaque brique.</text>')
         css = (f".b1,.b2{{animation:2.6s {EASE_SPRING} infinite alternate}}.b1{{animation-name:in1}}.b2{{animation-name:in2}}"

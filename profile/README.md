@@ -2,9 +2,9 @@
 
 <img src="banner.svg" alt="ÉtymoLogique : comprendre comment les mots voyagent, se transforment et se composent" width="100%">
 
-<a href="https://etymologique.fr"><picture><source media="(prefers-color-scheme: dark)" srcset="btn-jouer-nuit.svg"><img src="btn-jouer.svg" alt="Jouer sur etymologique.fr" height="54"></picture></a>
-<a href="https://ko-fi.com/lunik_tiwabbit"><picture><source media="(prefers-color-scheme: dark)" srcset="btn-kofi-nuit.svg"><img src="btn-kofi.svg" alt="Offrir un café sur Ko-fi" height="54"></picture></a>
-<a href="https://lunik.github.io/EtymoLogique/"><picture><source media="(prefers-color-scheme: dark)" srcset="btn-dossier-nuit.svg"><img src="btn-dossier.svg" alt="Dossier de conception" height="54"></picture></a>
+<a href="https://etymologique.fr" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="btn-jouer-nuit.svg"><img src="btn-jouer.svg" alt="Jouer sur etymologique.fr" height="54"></picture></a>
+<a href="https://ko-fi.com/lunik_tiwabbit" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="btn-kofi-nuit.svg"><img src="btn-kofi.svg" alt="Offrir un café sur Ko-fi" height="54"></picture></a>
+<a href="https://etymologique.github.io/Design/" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="btn-dossier-nuit.svg"><img src="btn-dossier.svg" alt="Dossier de conception" height="54"></picture></a>
 
 </div>
 
@@ -20,13 +20,13 @@ Autour de la fusion : un fascicule de 20 à 30 mots environ tous les 30 jours, t
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="respect-nuit.svg"><img src="respect.svg" alt="Gratuit, sans publicité, aucun avantage payant, compte facultatif, aucun traceur tiers, code libre" width="100%"></picture>
 
-Code sous [AGPL 3.0](https://www.gnu.org/licenses/agpl-3.0.html), documentation et données sous [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr). On joue en invité ; le compte, facultatif, se crée par lien et code e-mail, sans mot de passe.
+Code sous <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">AGPL 3.0</a>, documentation et données sous <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener">CC BY-SA 4.0</a>. On joue en invité ; le compte, facultatif, se crée par lien et code e-mail, sans mot de passe.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="capot-nuit.svg"><img src="capot.svg" alt="PWA React, API Rust, PostgreSQL, Terraform sur Scaleway, plus de soixante-dix ADR" width="100%"></picture>
 
-Toutes les décisions sont publiées dans le [dossier de conception](https://lunik.github.io/EtymoLogique/adr.html).
+Toutes les décisions sont publiées dans le <a href="https://etymologique.github.io/Design/adr.html" target="_blank" rel="noopener">dossier de conception</a>.
 
-<a href="https://ko-fi.com/lunik_tiwabbit"><picture><source media="(prefers-color-scheme: dark)" srcset="soutien-nuit.svg"><img src="soutien.svg" alt="Soutenir ÉtymoLogique sur Ko-fi" width="100%"></picture></a>
+<a href="https://ko-fi.com/lunik_tiwabbit" target="_blank" rel="noopener"><picture><source media="(prefers-color-scheme: dark)" srcset="soutien-nuit.svg"><img src="soutien.svg" alt="Soutenir ÉtymoLogique sur Ko-fi" width="100%"></picture></a>
 
 <img src="bandeaux.svg" alt="ÉtymoLogique · remonter le fil · Chaque mot est une piste" width="100%">
 
